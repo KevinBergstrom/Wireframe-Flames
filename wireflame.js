@@ -25,7 +25,10 @@ var width = 800;
 var connectDist = 100;
 
 var mouseX = 0;
-var mouseY = 35;
+var mouseY = 0;
+
+var mousePercentX = 0;
+var mousePercentY = 0.1;
 
 var mouseDown = false;
 
@@ -169,8 +172,8 @@ function renderConnections(){
     let warpX = renderArea.canvas.width/width;
     let warpY = renderArea.canvas.height/height;
 
-    let newMouseY = height*mouseY/canvas.height();
-    let newMouseX = width*mouseX/canvas.width();
+    let newMouseX = width*mousePercentX;
+    let newMouseY = height*mousePercentY;
 
     for(i = 0;i<points.length;i++){
 
@@ -269,6 +272,9 @@ function moved(event){
 
     mouseX = event.clientX;
     mouseY = event.clientY;
+    
+    mousePercentX = mouseX/canvas.width();
+    mousePercentY = mouseY/canvas.height();
 
     //if the player is clicking
     if(mouseDown){
