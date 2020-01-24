@@ -1,0 +1,14 @@
+How to view:
+    Open the index.html file
+
+How to include in an html page:
+    include the wireflame.css stylesheet
+        <link rel="stylesheet" href="wireflame.css"/>
+
+    include the wireflame.js script
+        <script src="wireflame.js"></script>
+
+    make sure you include jQuery because wireflame.js needs it to function
+
+    add a canvas with id = "wireflame" and set a height and width for it
+        <canvas id="wireflame" width="1920" height="1080"></canvas>
